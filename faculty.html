@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty – Dept. of CSE | CMS College of Engineering, Namakkal</title>
+  <meta name="description" content="Meet the experienced faculty members of the Department of Computer Science and Engineering at CMS College of Engineering, Namakkal.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">CSE</div>
+        <div class="nav-logo-text">
+          Dept. of CSE
+          <small>CMS College of Engineering</small>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="faculty.html" class="active">Faculty</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="hero" style="min-height:45vh; padding-top:8rem;">
+    <div class="hero-bg">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">👨‍🏫 Our Teaching Staff</div>
+      <h1>Meet Our <span class="highlight">Faculty</span></h1>
+      <p>Dedicated educators with years of experience in academia and industry</p>
+    </div>
+  </section>
+
+  <!-- Faculty Listing -->
+  <section class="section">
+    <div class="section-container">
+      <div class="cards-grid" id="facultyGrid">
+        <!-- Faculty cards will be rendered by JS -->
+        <div class="page-loader" id="facultyLoader">
+          <div class="spinner"></div>
+          <p>Loading faculty data...</p>
+        </div>
+      </div>
+      <div class="empty-state" id="facultyEmpty" style="display:none;">
+        <div class="icon">👨‍🏫</div>
+        <h3>No Faculty Data Yet</h3>
+        <p>Faculty information will be available soon. Please check back later.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-text">
+        © 2026 Department of CSE, <span>CMS College of Engineering</span>, Namakkal. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="faculty.html">Faculty</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

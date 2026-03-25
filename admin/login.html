@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login – CSE Department</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div class="nav-logo-icon" style="width:60px; height:60px; font-size:1.4rem; margin:0 auto 1rem; border-radius:16px;">CSE</div>
+      </div>
+      <h2>Admin Panel</h2>
+      <p class="subtitle">CMS College of Engineering – Dept. of CSE</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+        </div>
+        <div id="loginError" class="form-error" style="text-align:center; margin-bottom:1rem;"></div>
+        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:1rem;">
+          🔐 Sign In
+        </button>
+      </form>
+
+      <div style="text-align:center; margin-top:1.5rem;">
+        <a href="../index.html" style="color:var(--text-muted); font-size:0.85rem;">← Back to Website</a>
+      </div>
+    </div>
+  </div>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Faculty – Admin | CSE Department</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <h3>🎓 CSE Admin</h3>
+        <small>CMS College of Engineering</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="faculty.html" class="active">
+          <span class="nav-icon">👨‍🏫</span> Faculty
+        </a>
+        <a href="events.html">
+          <span class="nav-icon">📅</span> Events
+        </a>
+        <a href="gallery.html">
+          <span class="nav-icon">📸</span> Gallery
+        </a>
+        <a href="../index.html">
+          <span class="nav-icon">🌐</span> View Website
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logoutAdmin(); return false;">
+          <span class="nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1>Manage Faculty</h1>
+          <p>Add, edit, or remove faculty members</p>
+        </div>
+        <button class="btn btn-primary" id="addFacultyBtn">➕ Add Faculty</button>
+      </div>
+
+      <!-- Faculty Table -->
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Qualification</th>
+              <th>Specialization</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="facultyTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="facultyEmpty" style="display:none;">
+        <div class="icon">👨‍🏫</div>
+        <h3>No Faculty Added</h3>
+        <p>Click "Add Faculty" to add your first faculty member.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Faculty Modal -->
+  <div class="modal-overlay" id="facultyModal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Faculty Member</h2>
+      <form id="facultyForm">
+        <div class="form-group">
+          <label for="fName">Full Name *</label>
+          <input type="text" id="fName" placeholder="e.g. Dr. John Smith" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fDesignation">Designation *</label>
+            <input type="text" id="fDesignation" placeholder="e.g. Professor" required>
+          </div>
+          <div class="form-group">
+            <label for="fQualification">Qualification *</label>
+            <input type="text" id="fQualification" placeholder="e.g. Ph.D in CSE" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fSpecialization">Specialization</label>
+            <input type="text" id="fSpecialization" placeholder="e.g. AI & ML">
+          </div>
+          <div class="form-group">
+            <label for="fExperience">Experience</label>
+            <input type="text" id="fExperience" placeholder="e.g. 10 years">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fEmail">Email</label>
+          <input type="email" id="fEmail" placeholder="e.g. john@cmsce.ac.in">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
+          <button type="button" class="btn btn-outline" id="closeModal" style="display:none;">X</button>
+          <button type="submit" class="btn btn-primary">💾 Save Faculty</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>

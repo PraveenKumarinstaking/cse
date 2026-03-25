@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Gallery – Admin | CSE Department</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <h3>🎓 CSE Admin</h3>
+        <small>CMS College of Engineering</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="faculty.html">
+          <span class="nav-icon">👨‍🏫</span> Faculty
+        </a>
+        <a href="events.html">
+          <span class="nav-icon">📅</span> Events
+        </a>
+        <a href="gallery.html" class="active">
+          <span class="nav-icon">📸</span> Gallery
+        </a>
+        <a href="../index.html">
+          <span class="nav-icon">🌐</span> View Website
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logoutAdmin(); return false;">
+          <span class="nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1>Manage Gallery</h1>
+          <p>Upload and manage photo gallery images</p>
+        </div>
+        <button class="btn btn-primary" id="addGalleryBtn">📤 Upload Image</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="cards-grid" id="galleryAdminGrid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));"></div>
+
+      <div class="empty-state" id="galleryEmpty" style="display:none;">
+        <div class="icon">📷</div>
+        <h3>No Images Uploaded</h3>
+        <p>Click "Upload Image" to add photos to the gallery.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Gallery Modal -->
+  <div class="modal-overlay" id="galleryModal">
+    <div class="modal">
+      <h2 id="modalTitle">Upload Image</h2>
+      <form id="galleryForm">
+        <div class="form-group">
+          <label for="gImage">Select Image *</label>
+          <input type="file" id="gImage" accept="image/*" required>
+          <img id="imagePreview" style="display:none; margin-top:1rem; max-width:100%; max-height:200px; border-radius:10px; border:1px solid var(--glass-border);" alt="Preview">
+        </div>
+        <div class="form-group">
+          <label for="gCaption">Caption</label>
+          <input type="text" id="gCaption" placeholder="e.g. Annual Day Celebrations 2026">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
+          <button type="button" class="btn btn-outline" id="closeModal" style="display:none;">X</button>
+          <button type="submit" class="btn btn-primary">📤 Upload</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>

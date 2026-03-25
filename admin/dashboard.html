@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – Admin | CSE Department</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <h3>🎓 CSE Admin</h3>
+        <small>CMS College of Engineering</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="faculty.html">
+          <span class="nav-icon">👨‍🏫</span> Faculty
+        </a>
+        <a href="events.html">
+          <span class="nav-icon">📅</span> Events
+        </a>
+        <a href="gallery.html">
+          <span class="nav-icon">📸</span> Gallery
+        </a>
+        <a href="../index.html">
+          <span class="nav-icon">🌐</span> View Website
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logoutAdmin(); return false;">
+          <span class="nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Welcome to the CSE Department Admin Panel</p>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="dashboard-stats">
+        <div class="dash-stat-card">
+          <div class="icon faculty-icon">👨‍🏫</div>
+          <h3 id="facultyCount">0</h3>
+          <p>Faculty Members</p>
+        </div>
+        <div class="dash-stat-card">
+          <div class="icon events-icon">📅</div>
+          <h3 id="eventsCount">0</h3>
+          <p>Events & News</p>
+        </div>
+        <div class="dash-stat-card">
+          <div class="icon gallery-icon">📸</div>
+          <h3 id="galleryCount">0</h3>
+          <p>Gallery Images</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <h2 style="font-size:1.3rem; color:var(--white); margin-bottom:1.2rem;">Quick Actions</h2>
+      <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <a href="faculty.html" class="card" style="cursor:pointer;">
+          <div class="card-body" style="text-align:center; padding:2rem;">
+            <div style="font-size:2rem; margin-bottom:0.8rem;">➕</div>
+            <h3>Manage Faculty</h3>
+            <p style="margin-top:0.4rem; font-size:0.85rem;">Add, edit or remove faculty members</p>
+          </div>
+        </a>
+        <a href="events.html" class="card" style="cursor:pointer;">
+          <div class="card-body" style="text-align:center; padding:2rem;">
+            <div style="font-size:2rem; margin-bottom:0.8rem;">📢</div>
+            <h3>Manage Events</h3>
+            <p style="margin-top:0.4rem; font-size:0.85rem;">Add, edit or remove events & news</p>
+          </div>
+        </a>
+        <a href="gallery.html" class="card" style="cursor:pointer;">
+          <div class="card-body" style="text-align:center; padding:2rem;">
+            <div style="font-size:2rem; margin-bottom:0.8rem;">🖼️</div>
+            <h3>Manage Gallery</h3>
+            <p style="margin-top:0.4rem; font-size:0.85rem;">Upload or remove gallery images</p>
+          </div>
+        </a>
+      </div>
+    </main>
+  </div>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Events – Admin | CSE Department</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        <h3>🎓 CSE Admin</h3>
+        <small>CMS College of Engineering</small>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="faculty.html">
+          <span class="nav-icon">👨‍🏫</span> Faculty
+        </a>
+        <a href="events.html" class="active">
+          <span class="nav-icon">📅</span> Events
+        </a>
+        <a href="gallery.html">
+          <span class="nav-icon">📸</span> Gallery
+        </a>
+        <a href="../index.html">
+          <span class="nav-icon">🌐</span> View Website
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" onclick="logoutAdmin(); return false;">
+          <span class="nav-icon">🚪</span> Logout
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <div class="admin-header">
+        <div>
+          <h1>Manage Events</h1>
+          <p>Add, edit, or remove events and announcements</p>
+        </div>
+        <button class="btn btn-primary" id="addEventBtn">➕ Add Event</button>
+      </div>
+
+      <!-- Events Table -->
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Venue</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="eventsTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="eventsEmpty" style="display:none;">
+        <div class="icon">📅</div>
+        <h3>No Events Added</h3>
+        <p>Click "Add Event" to add your first event.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Event Modal -->
+  <div class="modal-overlay" id="eventModal">
+    <div class="modal">
+      <h2 id="modalTitle">Add Event</h2>
+      <form id="eventForm">
+        <div class="form-group">
+          <label for="eTitle">Event Title *</label>
+          <input type="text" id="eTitle" placeholder="e.g. Workshop on Machine Learning" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eType">Event Type *</label>
+            <select id="eType" required>
+              <option value="Workshop">Workshop</option>
+              <option value="Seminar">Seminar</option>
+              <option value="Competition">Competition</option>
+              <option value="Guest Lecture">Guest Lecture</option>
+              <option value="Cultural">Cultural</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="eDate">Date *</label>
+            <input type="date" id="eDate" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="eVenue">Venue</label>
+          <input type="text" id="eVenue" placeholder="e.g. CSE Seminar Hall">
+        </div>
+        <div class="form-group">
+          <label for="eDescription">Description</label>
+          <textarea id="eDescription" placeholder="Describe the event details..." rows="4"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-outline" id="cancelBtn">Cancel</button>
+          <button type="button" class="btn btn-outline" id="closeModal" style="display:none;">X</button>
+          <button type="submit" class="btn btn-primary">💾 Save Event</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/admin.js"></script>
+</body>
+</html>
